@@ -1,14 +1,14 @@
-##DDQN agent in Lunar Lander
+## DDQN agent in Lunar Lander
 
 This repo explores strategies around various reinforcement learning techniques, specifically Q-learning. Q-learning can be used to solve a wide range of tasks such as playing video games or stock-trading.
 
 The environment I wanted to solve with Rainbow was [LunarLander](https://gym.openai.com/envs/LunarLander-v2/)**, as part of OpenAI's gym. 
 
-The goal is to develop an agent piloting a spacecraft to arrive to a landing pad. The environment is an 8-dimensional continuous state space (x, y, vx, vy, ?, v?, left-leg, right-leg) with 4 discrete actions (do nothing, fire left engine, fire main engine, fire right engine). Various points are assigned based on the quality of the landing, with the problem being deemed solved once an average score of 200 points is met after 100 consecutive runs. I used DDQN with prioritized experience replay to effectively solve the problem.
+The goal is to develop an agent piloting a spacecraft to arrive to a landing pad. The environment is an 8-dimensional continuous state space (x, y, vx, vy, ?, v?, left-leg, right-leg) with 4 discrete actions (do nothing, fire left engine, fire main engine, fire right engine). Various points are assigned based on the quality of the landing, with the problem being deemed solved once an average score of 200 points is met after 100 consecutive runs. I used DDQN with experience replay to effectively solve the problem.
 
 ![Sample of a successful episode](https://user-images.githubusercontent.com/1076706/33915900-ea25fd06-df5a-11e7-9c7a-71dafc04a770.gif)
 
-###Background
+### Background
 
 Q-learning is a widely-known algorithm in model-free RL. An RL problem is set up where an agent explores an environment enough to learn about a certain behavior to maximize a reward. Q-learning is the agent coming up with Q values for a state-action (s,a) pair to arrive at a policy (the behavior), p. The policy recommends discrete actions at each time step to arrive to a goal.
 
@@ -24,7 +24,7 @@ A couple of enhancements have followed suit to improve this framework, some of w
 
 **Double DQN (DDQN)**: Researchers have found that DQN also overestimates values, because of the *max* aspect. Updating the Q-values amplifies the differences greatly over the rewards which can cause divergence. A second network is introduced: the Q network is used to select the best action, and the Target network is used to estimate the value. Splitting also removes oscillation (of the highly correlated and sequential samples) and allows more stable Q-values for the algorithm to converge. 
 
-####Instructions
+#### Instructions
 My code is in Python 3.7, and the external libraries used were `numpy`, `gym`, and `keras`. 
 
 The code can be ran either to train models or evaluate a single one.
@@ -62,11 +62,11 @@ There are quite a few parameters to tune as well. Some settings I decided on for
   * Configure pip/binutils to use Visual Studio by setting an environment variable: `set DISTUTILS_USE_SDK=1`
   * Install OpenAi Gym with Box2d support
 
-#####Native Tools Command Prompt for VS 2017
+##### Native Tools Command Prompt for VS 2017
 
 ```pip install box2d-py```
 
-#####Base env with Anaconda
+##### Base env with Anaconda
 
 `conda install -c conda-forge swig=3.0.12`
 
