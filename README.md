@@ -47,7 +47,7 @@ There are quite a few parameters to tune as well. Some settings I decided on for
 
 ##
 
-#####*Dependencies for LunarLander are a bit messy to install and set up on Windows OS, but can be done below:
+##### *Dependencies for LunarLander are a bit messy to install and set up on Windows OS, but can be done below:
 * Install Python
 * Install Build Tools
   * Download and Install Build Tools for Visual Studio 2017
