@@ -1,8 +1,8 @@
-## DDQN agent in Lunar Lander
+## DDQN Agent in Lunar Lander
 
 This repo explores strategies around various reinforcement learning techniques, specifically Q-learning. Q-learning can be used to solve a wide range of tasks such as playing video games or stock-trading.
 
-The environment I wanted to solve with Rainbow was [LunarLander](https://gym.openai.com/envs/LunarLander-v2/)**, as part of OpenAI's gym. 
+The environment I wanted to solve was [LunarLander](https://gym.openai.com/envs/LunarLander-v2/), as part of OpenAI's gym. The environment can be changed so long as the dimensions fit the model inputs. 
 
 The goal is to develop an agent piloting a spacecraft to arrive to a landing pad. The environment is an 8-dimensional continuous state space (x, y, vx, vy, ?, v?, left-leg, right-leg) with 4 discrete actions (do nothing, fire left engine, fire main engine, fire right engine). Various points are assigned based on the quality of the landing, with the problem being deemed solved once an average score of 200 points is met after 100 consecutive runs. I used DDQN with experience replay to effectively solve the problem.
 
@@ -16,7 +16,7 @@ Q-learning is a widely-known algorithm in model-free RL. An RL problem is set up
 
 The Bellman equation defines the optimal policy, which maximizes the long-term expected reward. Gamma denotes the weight to place future rewards. alpha (not shown above) is the learning rate at which the agent updates their Q-values. When it is time to test the model, all the agent has to do is look at it's Q-values given a state-action pair and take the corresponding best action.
 
-A couple of enhancements have followed suit to improve this framework, some of which are outlined here***:
+A couple of enhancements have followed suit to improve this framework, some of which are outlined here**:
 
 **Deep Q-network (DQN)**: high-dimensional state-action pairs cause combinatoric explosions to the Q-value lookup. A fix to this is to use a neural network to approximate the Q-function. 
 
@@ -82,7 +82,7 @@ No need to use the same shell or keep build tools on your computer after install
 
 ##
 
-\*\*\*As an aside, the **[Rainbow](https://arxiv.org/pdf/1710.02298.pdf)** algorithm combines several different additional enhancements (Dueling DQN, Noisy Nets, Distributional-RL, N-step, DDQN, Prioritized Experience Replay) of Q-learning to create a model that for many tasks can achieve superhuman performance. 
+\*\*As an aside, the **[Rainbow](https://arxiv.org/pdf/1710.02298.pdf)** algorithm combines several different additional enhancements (Dueling DQN, Noisy Nets, Distributional-RL, N-step, DDQN, Prioritized Experience Replay) of Q-learning to create a model that for many tasks can achieve superhuman performance. 
 
 
 
